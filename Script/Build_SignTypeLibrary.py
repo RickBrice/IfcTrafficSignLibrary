@@ -7,7 +7,7 @@ import os
 import re
 from platformdirs import user_desktop_path
 
-image_root = "C:\\Users\\rickb\\OneDrive - Washington State Department of Transportation\\BIM for Infrastructure\\Signs\\MUTCD\\Source\\"
+image_root = "../SignFaces/"
 uri_root = "https://raw.githubusercontent.com/RickBrice/IfcTrafficSignLibrary/main/SignFaces/"
 
 no_dimensions = []
@@ -101,7 +101,7 @@ def handle_rectangle(file_path,model,body_model_context):
         w,h = dims
         points = generate_polygon(w,h,4,math.pi/4)
         indicies = [(1,2,3),(3,4,1)]
-        return create_signtype(file_path,model,body_model_context,points,indicies)
+        return create_signtype(file_path,model,body_model_context,points,indicies,"Rectangle")
     else:
         return None
     
@@ -112,7 +112,7 @@ def handle_triangle(file_path,model,body_model_context):
         w,h = dims
         points = generate_polygon(w,h,3,math.pi/6)
         indicies = [(1,2,3)]
-        return create_signtype(file_path,model,body_model_context,points,indicies)
+        return create_signtype(file_path,model,body_model_context,points,indicies,"Triangle")
     else:
         return None
 
@@ -122,7 +122,7 @@ def handle_octagon(file_path,model,body_model_context):
         w,h = dims
         points = generate_polygon(w,h,8,math.pi/8.)
         indicies = [(1,2,3),(1,3,4),(1,4,5),(1,5,6),(1,6,7),(1,7,8)]
-        return create_signtype(file_path,model,body_model_context,points,indicies)
+        return create_signtype(file_path,model,body_model_context,points,indicies,"Octagon")
 
 def handle_diamond(file_path,model,body_model_context):
     dims = extract_dimensions(file_path)
@@ -130,7 +130,7 @@ def handle_diamond(file_path,model,body_model_context):
         w,h = dims
         points = generate_polygon(w,h,4,0.)
         indicies = [(1,2,3),(3,4,1)]
-        return create_signtype(file_path,model,body_model_context,points,indicies)
+        return create_signtype(file_path,model,body_model_context,points,indicies,"Diamond")
     else:
         return None
 
@@ -140,7 +140,7 @@ def handle_pentagon(file_path,model,body_model_context):
         w,h = dims
         points = [(w/2.,-h/2.,0.),(w/2.,0.,0.),(0.,h/2.,0.),(-w/2.,0.,0.),(-w/2.,-h/2.,0.)]
         indicies = [(1,2,3),(3,4,5),(1,3,5)]
-        return create_signtype(file_path,model,body_model_context,points,indicies)
+        return create_signtype(file_path,model,body_model_context,points,indicies,"Pentagon")
     else:
         return None
 
@@ -166,7 +166,7 @@ def handle_crossbuck(file_path,model,body_model_context):
         
         indicies = [(1,2,3),(1,3,4),(4,5,6),(4,6,7),(7,8,9),(7,9,10),(10,11,12),(10,12,1),(1,4,7),(1,7,10)]
         
-        return create_signtype(file_path,model,body_model_context,points,indicies)
+        return create_signtype(file_path,model,body_model_context,points,indicies,"CrossBuck")
     else:
         return None
         
@@ -179,7 +179,7 @@ SHAPE_HANDLERS = {
     "CrossBuck": handle_crossbuck
 }
     
-def create_signtype(file_type,model,body_model_context,points,indicies):
+def create_signtype(file_type,model,body_model_context,points,indicies,shape_name):
     #
     # create IfcSignType that acts as a predefined cell
     #
@@ -197,7 +197,7 @@ def create_signtype(file_type,model,body_model_context,points,indicies):
         RepeatS = False,
         RepeatT = False,
         Mode = "DIFFUSE",
-        URLReference = uri_root + name + ext
+        URLReference = uri_root + shape_name + "/" + name + ext
     )
 
     shading = model.createIfcSurfaceStyleRendering(
@@ -250,8 +250,9 @@ def create_ifc():
 
     model.createIfcRelDeclares(GlobalId=ifcopenshell.guid.new(),RelatingContext=project,RelatedDefinitions=[sign_library])
 
-    desktop = user_desktop_path()
-    output_file = f"{desktop}\\TrafficSignLibrary.ifc"
+    #desktop = user_desktop_path()
+    #output_file = f"{desktop}\\TrafficSignLibrary.ifc"
+    output_file = "..\\IfcTrafficSignLibrary.ifc"
     print(output_file)
     model.write(output_file)
     

@@ -8,8 +8,7 @@ import re
 from platformdirs import user_desktop_path
 
 image_root = "C:\\Users\\rickb\\OneDrive - Washington State Department of Transportation\\BIM for Infrastructure\\Signs\\MUTCD\\Source\\"
-uri_root = "C:\\Users\\rickb\\OneDrive - Washington State Department of Transportation\\BIM for Infrastructure\\Signs\\MUTCD\\Library\\"
-#uri_root = "https://www.wsdot.wa.gov/eesc/bridge/Signs/"
+uri_root = "https://raw.githubusercontent.com/RickBrice/IfcTrafficSignLibrary/main/SignFaces/"
 
 no_dimensions = []
 

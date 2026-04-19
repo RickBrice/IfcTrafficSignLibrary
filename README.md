@@ -41,6 +41,6 @@ The sign is added to your model. It does not yet show the face texture. To see t
 The sign model can now be completed by adding a post, foundation, materials, etc.
 
 
+## Implementation Notes
 
-
-
+The signs images in the SignFaces folder are grouped into sub folders based on their shape. This was done because the script needs to know the general shape of the sign to generate its representation geometry. Since nothing is encoded in the filename, there wasn't a mapping of MUTCD codes to shape, or other indicators of sign shape, I sorted them manually and used the folder name to indicate shape. This may not be the most efficient or cleanest implementation, but it worked.

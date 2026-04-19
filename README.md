@@ -5,6 +5,9 @@ This is a prototype library for US traffic signs based on the [MUTCD](https://mu
 Note that this work is completely independent of NIBS, FHWA, or anyone else. This is the original work of the repository owner.
 
 ## How to use this library?
+
+> Note: This procedure requires a patch to Blender/Bonsai implemented in PR https://github.com/IfcOpenShell/IfcOpenShell/pull/7961
+
 Download the IfcTrafficSignLibrary.ifc file by selecting it and then using the Download button.
 
 ![](./Images/Download_IfcTrafficSignLibrary.png)

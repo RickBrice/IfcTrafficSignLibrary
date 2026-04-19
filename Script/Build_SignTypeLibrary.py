@@ -30,7 +30,7 @@ def get_extensions(path):
     _, ext = os.path.splitext(base)       # ('image_12x34', '.png')
     return ext
 
-def extract_code(filename: str) -> str:
+def extract_mutcd_code(filename: str) -> str:
     """
     Extracts the leading code from a filename.
     The code is assumed to be the first token before the first space.
@@ -185,7 +185,7 @@ def create_signtype(file_type,model,body_model_context,points,indicies,shape_nam
     #
 
     name = get_root_filename(file_type)
-    tag = extract_code(name)
+    code = extract_mutcd_code(name)
     ext = get_extensions(file_type)
     
     point_list = model.createIfcCartesianPointList3d(CoordList=points)
@@ -201,7 +201,7 @@ def create_signtype(file_type,model,body_model_context,points,indicies,shape_nam
     )
 
     shading = model.createIfcSurfaceStyleRendering(
-        SurfaceColour = model.createIfcColourRgb(Red=0.5,Green=0.5,Blue=0.5),
+        SurfaceColour = model.createIfcColourRgb(Red=0.,Green=0.,Blue=0.),
         ReflectanceMethod="NOTDEFINED"
     )
 
@@ -221,11 +221,24 @@ def create_signtype(file_type,model,body_model_context,points,indicies,shape_nam
     )
 
     # the geometric representation is reusable and is placed in an IfcRepresentationMap. Use (0,0,0) as a simple origin
-    origin =  model.createIfcAxis2Placement3D(Location=model.createIfcCartesianPoint((0.,0.,0.)))
+    origin =  model.createIfcAxis2Placement3D(Location=model.createIfcCartesianPoint((0.,0.,0.)),Axis=model.createIfcDirection((0.,-1.,0.)))
     rep_map = model.createIfcRepresentationMap(MappingOrigin=origin,MappedRepresentation=shape_representation)
 
     # create the IfcSignType
-    sign_type = model.createIfcSignType(GlobalId=ifcopenshell.guid.new(),Name=name,PredefinedType="PICTORAL",Tag=tag,RepresentationMaps=[rep_map])
+    # Per https://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/lexical/Pset_SignCommon.htm Pset_SignCommon.Reference is deprecated and the refereince ID,
+    # which is the MUTCD code in this case, the Name attribute of the relating type is to be used. The relating type is the IfcSignType. For this reason,
+    # Name=code
+    sign_type = model.createIfcSignType(GlobalId=ifcopenshell.guid.new(),Name=code,Description=name,PredefinedType="PICTORAL",RepresentationMaps=[rep_map])
+    
+    """
+    This code, if cleaned up, could be used to add common property sets for signs
+    # add properties to the sign type that are common for all instances of this type
+    sign_base_quantities = ifcopenshell.api.pset.add_pset(model,product=sign_type,name="Qset_SignBaseQuantities")
+    ifcopenshell.api.pset.edit_pset(model,pset=sign_base_quantities,properties={f"\"Height\":{h},\"Width\":{w}})
+
+    pictorial_sign_quantities = ifcopenshell.api.pset.add_pset(model,product=sign_type,name="Qset_PictorialSignQuantities")
+    ifcopenshell.api.pset.edit_pset(model,pset=pictorial_sign_quantities,properties={"Area":1296.0,"SignArea":1296.0})
+    """
     
     return sign_type
 
@@ -234,7 +247,7 @@ def create_ifc():
     model = ifcopenshell.file(schema="IFC4X3")
 
     # basic model setup for project and site
-    project = model.createIfcProject(GlobalId=ifcopenshell.guid.new(),Name="Sign Library")
+    project = model.createIfcProject(GlobalId=ifcopenshell.guid.new(),Name="Traffic Sign Library")
 
     # set up system of units (must be done after IfcProject is created)
     length_unit = ifcopenshell.api.unit.add_conversion_based_unit(model,name="inch")
@@ -244,18 +257,18 @@ def create_ifc():
     geometric_representation_context = ifcopenshell.api.context.add_context(model,context_type="Model")
     body_model_context = ifcopenshell.api.context.add_context(model,context_type="Model",context_identifier="Body",target_view="MODEL_VIEW",parent=geometric_representation_context)
 
-    sign_library = model.createIfcProjectLibrary(GlobalId=ifcopenshell.guid.new(),Name="Traffic Signs", RepresentationContexts=[body_model_context])
+    sign_library = model.createIfcProjectLibrary(GlobalId=ifcopenshell.guid.new(),Name="Traffic Signs", Description="Based on Standard Highway Signs, 2004 Edition", RepresentationContexts=[body_model_context])
     sign_types = process_signs(image_root,model,body_model_context)
-    model.createIfcRelDeclares(GlobalId=ifcopenshell.guid.new(),RelatingContext=sign_library,RelatedDefinitions=sign_types)
+    model.createIfcRelDeclares(GlobalId=ifcopenshell.guid.new(),RelatingContext=sign_library,RelatedDefinitions=sign_types) # relate sign types to the library
 
-    model.createIfcRelDeclares(GlobalId=ifcopenshell.guid.new(),RelatingContext=project,RelatedDefinitions=[sign_library])
+    model.createIfcRelDeclares(GlobalId=ifcopenshell.guid.new(),RelatingContext=project,RelatedDefinitions=[sign_library]) # relate the library to the project
 
-    #desktop = user_desktop_path()
-    #output_file = f"{desktop}\\TrafficSignLibrary.ifc"
     output_file = "..\\IfcTrafficSignLibrary.ifc"
     print(output_file)
     model.write(output_file)
-    
+
+    # lists of sign file names that did not contain encoded dimentions
+    # and thus did not generate an IfcSignType    
     if len(no_dimensions) != 0:
         print("")
         print("Signs without dimensions")
@@ -266,4 +279,3 @@ def create_ifc():
 
 if __name__ == "__main__":
     create_ifc()
-    print("Done")

@@ -311,7 +311,7 @@ def create_signtype(file_path,model,body_model_context,shape_name):
     # create the IfcSignType
     # Per https://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/lexical/Pset_SignCommon.htm Pset_SignCommon.Reference is deprecated and the refereince ID,
     # which is the MUTCD code in this case, the Name attribute of the relating type is to be used. The relating type is the IfcSignType. For this reason,
-    # Name=code
+    # Name=code. However, code is not descriptive, so for stop signs there will be three R01-01 entires which isn't very helpful. For this reason, the name is used.
     sign_type = model.createIfcSignType(GlobalId=ifcopenshell.guid.new(),Name=name,Description=name,PredefinedType="PICTORAL",RepresentationMaps=[rep_map])
     
     # add properties to the sign type that are common for all instances of this type

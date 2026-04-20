@@ -7,6 +7,8 @@ import os
 import re
 from platformdirs import user_desktop_path
 
+sign_thickness = 1.
+
 image_root = "../SignFaces/"
 uri_root = "https://raw.githubusercontent.com/RickBrice/IfcTrafficSignLibrary/main/SignFaces/"
 
@@ -37,21 +39,62 @@ def extract_mutcd_code(filename: str) -> str:
     """
     return filename.split(" ", 1)[0]
 
-def generate_polygon(width,height,sides,start_angle):
+def generate_polygon(width,height,sides,start_angle,dim):
     angle_step = 2*math.pi/sides
     X = 0.5*width/math.cos(math.pi/sides)
     Y = 0.5*height/math.cos(math.pi/sides)
-    points = [
-        (
-            X*math.cos(start_angle + i*angle_step),
-            Y*math.sin(start_angle + i*angle_step),
-            0.
-        )
-        for i in range(sides)
-    ]
+    if dim == 2:
+        points = [
+            (
+                X*math.cos(start_angle + i*angle_step),
+                Y*math.sin(start_angle + i*angle_step)
+            )
+            for i in range(sides)
+        ]
+
+        points.insert(0,(0.,0.))
+    else:
+        points = [
+            (
+                X*math.cos(start_angle + i*angle_step),
+                Y*math.sin(start_angle + i*angle_step),
+                0.
+            )
+            for i in range(sides)
+        ]
+
+        points.insert(0,(0.,0.,0.))
 
     return points
 
+from typing import List, Tuple
+
+def polygon_area(points):
+    n = len(points)
+    area_sum = 0.0
+    for i in range(n):
+        x1, y1, z1 = points[i]
+        x2, y2, z2 = points[(i + 1) % n]  # Wrap around to first point
+        area_sum += (x1 * y2) - (x2 * y1)
+
+    return area_sum / 2.0
+
+
+def normalize_image_points(points):
+    min_x = min(p[0] for p in points)
+    min_y = min(p[1] for p in points)
+    max_x = max(p[0] for p in points)
+    max_y = max(p[1] for p in points)
+    dx = max_x - min_x
+    dy = max_y - min_y
+    
+    image_points = []
+    for p in points:
+        ip = ((p[0]-min_x)/dx,(p[1]-min_y)/dy)
+        image_points.append(ip)
+        
+    return image_points
+    
 import re
 
 no_dimensions = []
@@ -73,102 +116,115 @@ def extract_dimensions(filename):
     no_dimensions.append(filename)
     return None
 
-
 def process_signs(root_folder,model,body_model_context):
     sign_types = []
     for dirpath, dirnames, filenames in os.walk(root_folder):
         folder_name = os.path.basename(dirpath)
-
         for filename in filenames:
             if filename.lower().endswith(".png"):
                 full_path = os.path.join(dirpath, filename)
-
-                if folder_name in SHAPE_HANDLERS:
-                    handler = SHAPE_HANDLERS[folder_name]
-                    print(f"Processing {get_root_filename(full_path)}")
-                    sign_type = handler(full_path,model,body_model_context)
-                    if sign_type:
-                        sign_types.append(sign_type)
-                else:
-                    print(f"No handler for folder '{folder_name}', skipping {full_path}")
+                
+                sign_type = create_signtype(full_path,model,body_model_context,folder_name)
+                
+                if sign_type:
+                    sign_types.append(sign_type)
     
     return sign_types
 
+def append_backface_points(points,offset=-sign_thickness):
+    npoints = len(points)
+    
+    p = (points[0][0],points[0][1],points[0][2] + offset)
+    points.append(p)
+    
+    for i in reversed(range(1,npoints)):
+        p = (points[i][0],points[i][1],points[i][2] + offset)
+        points.append(p)
+        
 
-def handle_rectangle(file_path,model,body_model_context):
-    dims = extract_dimensions(file_path)
-    if dims:
-        w,h = dims
-        points = generate_polygon(w,h,4,math.pi/4)
-        indicies = [(1,2,3),(3,4,1)]
-        return create_signtype(file_path,model,body_model_context,points,indicies,"Rectangle")
-    else:
-        return None
+def generate_indicies(points):
+    indices = []
+    npoints = int(len(points)/2)
+    
+    # front face
+    for i in range(2,npoints):
+        indices.append((1,i,i+1))
+        
+    indices.append((1,npoints,2))
+    
+    # back face
+    for i in range(npoints+2,len(points)):
+        indices.append((npoints+1,i+1,i))
+        
+    indices.append((npoints+1,npoints+2,len(points)))
+
+    # sides
+    for i in range(0,npoints-2):
+        indices.append((2+i,len(points)-i,len(points)-1-i))
+        indices.append((2+i,len(points)-1-i,3+i))
+        
+    indices.append((npoints,npoints+2,len(points)))
+    indices.append((npoints,len(points),2))
+    
+    return indices
+
+def handle_rectangle(w,h):
+    sign_points = generate_polygon(w,h,4,math.pi/4,3)
+    image_points = normalize_image_points(sign_points)
+    append_backface_points(sign_points)
+    indices = generate_indicies(sign_points)
+    return image_points, sign_points, indices
     
 
-def handle_triangle(file_path,model,body_model_context):
-    dims = extract_dimensions(file_path)
-    if dims:
-        w,h = dims
-        points = generate_polygon(w,h,3,math.pi/6)
-        indicies = [(1,2,3)]
-        return create_signtype(file_path,model,body_model_context,points,indicies,"Triangle")
-    else:
-        return None
+def handle_triangle(w,h):
+    sign_points = generate_polygon(w,h,3,math.pi/6,3)
+    image_points = normalize_image_points(sign_points)
+    append_backface_points(sign_points)
+    indices = generate_indicies(sign_points)
+    return image_points, sign_points, indices
 
-def handle_octagon(file_path,model,body_model_context):
-    dims = extract_dimensions(file_path)
-    if dims:
-        w,h = dims
-        points = generate_polygon(w,h,8,math.pi/8.)
-        indicies = [(1,2,3),(1,3,4),(1,4,5),(1,5,6),(1,6,7),(1,7,8)]
-        return create_signtype(file_path,model,body_model_context,points,indicies,"Octagon")
+def handle_octagon(w,h):
+    sign_points = generate_polygon(w,h,8,math.pi/8.,3)
+    image_points = normalize_image_points(sign_points)
+    append_backface_points(sign_points)
+    indices = generate_indicies(sign_points)
+    return image_points, sign_points, indices
 
-def handle_diamond(file_path,model,body_model_context):
-    dims = extract_dimensions(file_path)
-    if dims:
-        w,h = dims
-        points = generate_polygon(w,h,4,0.)
-        indicies = [(1,2,3),(3,4,1)]
-        return create_signtype(file_path,model,body_model_context,points,indicies,"Diamond")
-    else:
-        return None
+def handle_diamond(w,h):
+    sign_points = generate_polygon(w,h,4,0.,3)
+    image_points = normalize_image_points(sign_points)
+    append_backface_points(sign_points)
+    indices = generate_indicies(sign_points)
+    return image_points, sign_points, indices
 
-def handle_pentagon(file_path,model,body_model_context):
-    dims = extract_dimensions(file_path)
-    if dims:
-        w,h = dims
-        points = [(w/2.,-h/2.,0.),(w/2.,0.,0.),(0.,h/2.,0.),(-w/2.,0.,0.),(-w/2.,-h/2.,0.)]
-        indicies = [(1,2,3),(3,4,5),(1,3,5)]
-        return create_signtype(file_path,model,body_model_context,points,indicies,"Pentagon")
-    else:
-        return None
+def handle_pentagon(w,h):
+    sign_points = [(0.,0.,0.), (w/2.,-h/2.,0.),(w/2.,0.,0.),(0.,h/2.,0.),(-w/2.,0.,0.),(-w/2.,-h/2.,0.)]
+    image_points = normalize_image_points(sign_points)
+    append_backface_points(sign_points)
+    indices = generate_indicies(sign_points)
+    return image_points, sign_points, indices
 
-def handle_crossbuck(file_path,model,body_model_context):
-    dims = extract_dimensions(file_path)
-    if dims:
-        a,b = dims
-        angle = math.pi/4.
-        p1 = (0.,-0.5*b/math.sin(angle),0.)
-        p2 = (0.5*(a-b)*math.cos(angle), -0.5*b/math.sin(angle) - 0.5*(a-b)*math.sin(angle),0.)
-        p3 = (p2[0] + b*math.cos(angle), p2[1]+b*math.sin(angle), 0.)
-        p4 = (0.5*b/math.cos(angle), 0., 0.)
-        p5 = (p4[0]+0.5*(a-b)*math.cos(angle), 0.5*(a-b)*math.sin(angle), 0.)
-        p6 = (p5[0]-b*math.cos(angle), p5[1] + b*math.sin(angle), 0.)
-        p7 = (0., 0.5*b/math.sin(angle), 0.)
-        p8 = (-p6[0], p6[1], p6[2])
-        p9 = (-p5[0], p5[1], p5[2])
-        p10 = (-p4[0], p4[1], p4[2])
-        p11 = (-p3[0], p3[1], p3[2])
-        p12 = (-p2[0], p2[1], p2[2])
-        
-        points = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12]
-        
-        indicies = [(1,2,3),(1,3,4),(4,5,6),(4,6,7),(7,8,9),(7,9,10),(10,11,12),(10,12,1),(1,4,7),(1,7,10)]
-        
-        return create_signtype(file_path,model,body_model_context,points,indicies,"CrossBuck")
-    else:
-        return None
+def handle_crossbuck(a,b):
+    angle = math.pi/4.
+    p0 = (0.,0.,0.)
+    p1 = (0.,-0.5*b/math.sin(angle),0.)
+    p2 = (0.5*(a-b)*math.cos(angle), -0.5*b/math.sin(angle) - 0.5*(a-b)*math.sin(angle),0.)
+    p3 = (p2[0] + b*math.cos(angle), p2[1]+b*math.sin(angle), 0.)
+    p4 = (0.5*b/math.cos(angle), 0., 0.)
+    p5 = (p4[0]+0.5*(a-b)*math.cos(angle), 0.5*(a-b)*math.sin(angle), 0.)
+    p6 = (p5[0]-b*math.cos(angle), p5[1] + b*math.sin(angle), 0.)
+    p7 = (0., 0.5*b/math.sin(angle), 0.)
+    p8 = (-p6[0], p6[1], p6[2])
+    p9 = (-p5[0], p5[1], p5[2])
+    p10 = (-p4[0], p4[1], p4[2])
+    p11 = (-p3[0], p3[1], p3[2])
+    p12 = (-p2[0], p2[1], p2[2])
+    
+    sign_points = [p0,p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12]
+    image_points = normalize_image_points(sign_points)
+    append_backface_points(sign_points)
+    indices = generate_indicies(sign_points)
+    return image_points, sign_points, indices
         
 SHAPE_HANDLERS = {
     "Rectangle": handle_rectangle,
@@ -178,18 +234,38 @@ SHAPE_HANDLERS = {
     "Pentagon": handle_pentagon,
     "CrossBuck": handle_crossbuck
 }
-    
-def create_signtype(file_type,model,body_model_context,points,indicies,shape_name):
+
+def create_signtype(file_path,model,body_model_context,shape_name):
     #
     # create IfcSignType that acts as a predefined cell
     #
 
-    name = get_root_filename(file_type)
+    name = get_root_filename(file_path)
     code = extract_mutcd_code(name)
-    ext = get_extensions(file_type)
+    ext = get_extensions(file_path)
     
-    point_list = model.createIfcCartesianPointList3d(CoordList=points)
-    sign_panel = model.createIfcTriangulatedFaceSet(Coordinates=point_list,CoordIndex=indicies)
+    dims = extract_dimensions(file_path)
+    if dims == None:
+        return None
+        
+    w,h = dims
+
+    sign_points = []
+    image_points = []
+    indices = []
+    
+    
+    if shape_name in SHAPE_HANDLERS:
+        handler = SHAPE_HANDLERS[shape_name]
+        print(f"Processing {get_root_filename(file_path)}")
+        image_points,sign_points,indices = handler(w,h)
+    else:
+        print(f"No handler for folder '{shape_name}', skipping {file_path}")
+        return None
+    
+    point_list = model.createIfcCartesianPointList3d(CoordList=sign_points)
+
+    sign_panel = model.createIfcTriangulatedFaceSet(Coordinates=point_list,CoordIndex=indices)
     shape_representation = model.createIfcShapeRepresentation(ContextOfItems=body_model_context,RepresentationIdentifier="Body",RepresentationType="Tessellation",Items=[sign_panel])
 
     # define the sign face image
@@ -198,6 +274,14 @@ def create_signtype(file_type,model,body_model_context,points,indicies,shape_nam
         RepeatT = False,
         Mode = "DIFFUSE",
         URLReference = uri_root + shape_name + "/" + name + ext
+    )
+
+    texture_vertex_list = model.createIfcTextureVertexList(TexCoordsList=image_points)
+    indexed_triangule_texture_map = model.createIfcIndexedTriangleTextureMap(
+        Maps=[image_texture],
+        MappedTo=sign_panel,
+        TexCoords=texture_vertex_list,
+        TexCoordIndex=indices[:len(image_points)-1]
     )
 
     shading = model.createIfcSurfaceStyleRendering(
@@ -221,26 +305,27 @@ def create_signtype(file_type,model,body_model_context,points,indicies,shape_nam
     )
 
     # the geometric representation is reusable and is placed in an IfcRepresentationMap. Use (0,0,0) as a simple origin
-    origin =  model.createIfcAxis2Placement3D(Location=model.createIfcCartesianPoint((0.,0.,0.)),Axis=model.createIfcDirection((0.,-1.,0.)))
+    origin =  model.createIfcAxis2Placement3D(Location=model.createIfcCartesianPoint((0.,0.,0.)),Axis=model.createIfcDirection((0.,-1.,0.)),RefDirection=model.createIfcDirection((1.,0.,0.)))
     rep_map = model.createIfcRepresentationMap(MappingOrigin=origin,MappedRepresentation=shape_representation)
 
     # create the IfcSignType
     # Per https://ifc43-docs.standards.buildingsmart.org/IFC/RELEASE/IFC4x3/HTML/lexical/Pset_SignCommon.htm Pset_SignCommon.Reference is deprecated and the refereince ID,
     # which is the MUTCD code in this case, the Name attribute of the relating type is to be used. The relating type is the IfcSignType. For this reason,
     # Name=code
-    sign_type = model.createIfcSignType(GlobalId=ifcopenshell.guid.new(),Name=code,Description=name,PredefinedType="PICTORAL",RepresentationMaps=[rep_map])
+    sign_type = model.createIfcSignType(GlobalId=ifcopenshell.guid.new(),Name=name,Description=name,PredefinedType="PICTORAL",RepresentationMaps=[rep_map])
     
-    """
-    This code, if cleaned up, could be used to add common property sets for signs
     # add properties to the sign type that are common for all instances of this type
     sign_base_quantities = ifcopenshell.api.pset.add_pset(model,product=sign_type,name="Qset_SignBaseQuantities")
-    ifcopenshell.api.pset.edit_pset(model,pset=sign_base_quantities,properties={f"\"Height\":{h},\"Width\":{w}})
+    ifcopenshell.api.pset.edit_pset(model,pset=sign_base_quantities,properties={"Height":h})
+    ifcopenshell.api.pset.edit_pset(model,pset=sign_base_quantities,properties={"Width":w})
 
+    area = polygon_area(sign_points[1:int(len(sign_points)/2.)])
     pictorial_sign_quantities = ifcopenshell.api.pset.add_pset(model,product=sign_type,name="Qset_PictorialSignQuantities")
-    ifcopenshell.api.pset.edit_pset(model,pset=pictorial_sign_quantities,properties={"Area":1296.0,"SignArea":1296.0})
-    """
+    ifcopenshell.api.pset.edit_pset(model,pset=pictorial_sign_quantities,properties={"Area":area})
+    ifcopenshell.api.pset.edit_pset(model,pset=pictorial_sign_quantities,properties={"SignArea":area})
     
     return sign_type
+
 
 def create_ifc():
     # create IFC model
@@ -257,11 +342,17 @@ def create_ifc():
     geometric_representation_context = ifcopenshell.api.context.add_context(model,context_type="Model")
     body_model_context = ifcopenshell.api.context.add_context(model,context_type="Model",context_identifier="Body",target_view="MODEL_VIEW",parent=geometric_representation_context)
 
+    # create the sign library
     sign_library = model.createIfcProjectLibrary(GlobalId=ifcopenshell.guid.new(),Name="Traffic Signs", Description="Based on Standard Highway Signs, 2004 Edition", RepresentationContexts=[body_model_context])
-    sign_types = process_signs(image_root,model,body_model_context)
-    model.createIfcRelDeclares(GlobalId=ifcopenshell.guid.new(),RelatingContext=sign_library,RelatedDefinitions=sign_types) # relate sign types to the library
 
-    model.createIfcRelDeclares(GlobalId=ifcopenshell.guid.new(),RelatingContext=project,RelatedDefinitions=[sign_library]) # relate the library to the project
+    # relate the library to the project
+    model.createIfcRelDeclares(GlobalId=ifcopenshell.guid.new(),RelatingContext=project,RelatedDefinitions=[sign_library]) 
+    
+    # generate the IfcSignType entities
+    sign_types = process_signs(image_root,model,body_model_context)
+    
+    # relate sign types to the library
+    model.createIfcRelDeclares(GlobalId=ifcopenshell.guid.new(),RelatingContext=sign_library,RelatedDefinitions=sign_types) 
 
     output_file = "..\\IfcTrafficSignLibrary.ifc"
     print(output_file)

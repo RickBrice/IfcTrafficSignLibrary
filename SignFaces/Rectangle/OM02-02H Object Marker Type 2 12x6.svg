@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="For_Sheets" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 864 432">
+  <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #231f20;
+      }
+
+      .st1 {
+        fill: #ffd046;
+      }
+    </style>
+  </defs>
+  <g>
+    <rect class="st1" x="-.1" y="-.1" width="864.2" height="432.2" rx="72.1" ry="72.1"/>
+    <path class="st0" d="M792,0c39.8,0,72,32.2,72,72v288c0,39.8-32.2,72-72,72H72c-39.8,0-72-32.2-72-72V72C0,32.2,32.2,0,72,0h720M792-.2H72C32.2-.2-.2,32.2-.2,72v288c0,39.8,32.4,72.2,72.2,72.2h720c39.8,0,72.2-32.4,72.2-72.2V72c0-39.8-32.4-72.2-72.2-72.2h0Z"/>
+  </g>
+  <path class="st1" d="M432,216"/>
+</svg>

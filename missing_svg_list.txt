@@ -1,0 +1,89 @@
+F:\IfcTrafficSignLibrary\SignFaces\Diamond\W19-03 FREEWAY ENDS 48x48.png
+F:\IfcTrafficSignLibrary\SignFaces\Diamond\W19-04 EXPRESSWAY ENDS 48x48.png
+F:\IfcTrafficSignLibrary\SignFaces\Diamond\W23-02 NEW TRAFFIC PATTERN AHEAD 36x36.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\D05-12 INTERSTATE OASIS 156x78.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\D05-12P INTERSTATE OASIS 144x48.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\D11-01a Bicycles (Guide) 18x18.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\D11-01bP BIKE ROUTE 18x6.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\D11-02 Pedestrians (Guide) 18x18.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\D11-04 Equestrians (Guide) 18x18.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\D13-03 FREEWAY ENTRANCE 48x30.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\D13-03a FREEWAY ENTRANCE 48x42.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\E01-05aP LEFT 72x30.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\E11-01 EXIT ONLY (Down Arrow) 174x36.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\E11-01a EXIT 66x18.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\E11-01b ONLY 66x18.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\E11-01c EXIT ONLY 120x18.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\E11-01d EXIT ONLY (Directional Arrow) 174x36.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\E11-01e EXIT ONLY (2 Directional Arrows) 222x36.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\E11-01f EXIT ONLY (2 Down Arrows) 222x36.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\E11-02 LEFT 60x18.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\I-13 ALT Emergency Notification (Alternate) 12x9.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\I-13 Emergency Notification 15x9.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\I01-01 SIGNALS SET FOR (Changeable Speed) 24x36.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\I01-01 SIGNALS SET FOR XX MPH 24x36.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R01-06c STATE LAW [STOP] FOR [SCHOOL CHILDREN] WITHIN CROSSWALK 12x36.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R01-09 STATE LAW YIELD TO PEDESTRIANS 90x24.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R01-09a STATE LAW STOP FOR PEDESTRIANS 90x24.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R03-08 Circular Intersection Lane Control - LT_R 36x36.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R03-08 Circular Intersection Lane Control - LT_T 36x36.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R03-08 Circular Intersection Lane Control - LT_TR 36x36.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R03-08 Circular Intersection Lane Control - L_LTR 36x36.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R03-09cP BEGIN 30x12.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R03-09dP END 30x12.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R03-29P PAY TOLL 24x18.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R03-30P TAKE TICKET 24x18.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R03-43 Priced Managed Lane Vehicle Occupancy (Overhead) 138x66.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R03-44 [ETC] ONLY 90x84.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R03-44a [ETC] OR HOV 2+ ONLY 132x84.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R03-45 EXPRESS LANE ENDS (Overhead) 90x66.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R03-45a EXPRESS RESTRICTION ENDS (Overhead) 114x66.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R04-02 Pass With Care 48x60.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R04-07c Keep Right (narrow) 18x30.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R04-08c Keep Left (narrow) 18x30.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R04-11 [Bicycle] MAY USE FULL LANE 30x30.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R04-13 SLOW VEHICLES MUST USE TURN-OUT AHEAD 42x24.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R04-14 SLOW VEHICLES MUST TURN OUT 30x42.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R05-03 NO MOTOR VEHICLES 24x24.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R05-10b NO PEDESTRIANS OR BICYCLES 30x18.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R05-10c NO PEDESTRIANS 24x12.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R05-11 AUTHORIZED VEHICLES ONLY 30x24.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R06-04 Roundabout Directional Arrow 30x24.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R06-04a Roundabout Directional Arrow 48x24.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R06-04b Roundabout Directional Arrow 60x24.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R10-01 CROSS ONLY ON GREEN 12x18.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R10-03 Ped Signal Pushbutton 9x12.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R10-03a Ped Signal Pushbutton 9x15.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R10-04 Ped Pushbutton GREEN 9x12.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R10-04a Ped Pushbutton GREEN 9x15.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R10-11c NTOR EXCEPT FROM RIGHT LANE 30x42.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R10-11d NTOR FROM THIS LANE 30x42.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R10-14 EMERGENCY SIGNAL STOP ON FR 36x42.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R10-14a EMERGENCY SIGNAL STOP ON FR (Overhead) 60x24.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R10-15L TURNING VEHICLES [YIELD] TO [PED] 30x30.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R10-15R TURNING VEHICLES [YIELD] TO [PED] 30x30.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R10-23 CROSSWALK STOP ON RED 24x30.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R10-24 [Bicycle] PUSH BUTTON FOR GREEN LIGHT 9x15.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R10-25 PUSH BUTTON WARNING LIGHTS 9x12.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R10-26 [Bicycle] PUSH BUTTON FOR GREEN LIGHT [Arrow] 9x15.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R10-27 LT YIELD ON FRA AFTER STOP 30x36.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R10-28 ONE VEHICLE PER GREEN 24x30.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R10-29 1 VEHICLE PER GREEN EACH LANE 36x24.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R10-30 RIGHT TURN ON RED MUST YIELD TO U TURN 30x36.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R10-31P AT SIGNAL 24x9.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\R10-32P PUSH BUTTON EXTRA CROSSING TIME 9x12.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\W01-08R Chevron Alignment 24x30.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\W09-06aP STOP AHEAD - PAY TOLL 264x30.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\W09-07L LEFT LANE EXIT ONLY AHEAD 132x72.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\W09-07R RIGHT LANE EXIT ONLY AHEAD 132x72.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\W10-11a 100 FEET BETWEEN TRACKS AND HIGHWAY 30x36.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\W10-11b 150 FEET BETWEEN HIGHWAY AND TRACKS BEHIND YOU 30x36.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\W16-12P TRAFFIC CIRCLE 24x18.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\W16-13P  WHEN FLASHING 24x18.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\W16-15P NEW 24x12.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\W16-16P LAST EXIT BEFORE TOLL 264x30.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\W16-17P ROUNDABOUT 24x12.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\W16-18P NOTICE 24x12.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\W19-01 FREEWAY ENDS X MILE 114x48.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\W19-02 EXPRESSWAY ENDS X MILE 144x48.png
+F:\IfcTrafficSignLibrary\SignFaces\Rectangle\W19-05 ALL TRAFFIC MUST EXIT 90x48.png

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="For_Sheets" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 432 1296">
+  <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: #231f20;
+      }
+
+      .st1 {
+        fill: #ffd046;
+        stroke: #231f20;
+        stroke-width: .5px;
+      }
+    </style>
+  </defs>
+  <rect class="st1" width="432" height="1296" rx="72" ry="72"/>
+  <polygon class="st0" points="216 92.9 0 308.9 0 471.9 216 255.9 432 471.9 432 308.9 216 92.9"/>
+  <polygon class="st0" points="216 408.6 0 624.6 0 787.6 216 571.6 432 787.6 432 624.6 216 408.6"/>
+  <polygon class="st0" points="216 724.4 0 940.4 0 1103.4 216 887.4 432 1103.4 432 940.4 216 724.4"/>
+  <path class="st0" d="M5.3,1250.9c10.7,26.4,36.6,45.1,66.7,45.1h51.1l92.9-92.9,92.9,92.9h51.1c30.1,0,56-18.7,66.7-45.1l-210.7-210.7L5.3,1250.9Z"/>
+  <path class="st0" d="M432,72C432,32.2,399.8,0,360,0h-84.1s156.1,156.1,156.1,156.1v-84.1Z"/>
+  <path class="st0" d="M0,72C0,32.2,32.2,0,72,0h84.1S0,156.1,0,156.1v-84.1Z"/>
+</svg>

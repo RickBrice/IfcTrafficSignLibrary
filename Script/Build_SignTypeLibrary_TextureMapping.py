@@ -177,7 +177,7 @@ def handle_rectangle(w,h):
     
 
 def handle_triangle(w,h):
-    sign_points = generate_polygon(w,h,3,math.pi/6,3)
+    sign_points = generate_polygon(w,h/math.cos(math.pi/6),3,math.pi/6,3)
     image_points = normalize_image_points(sign_points)
     append_backface_points(sign_points)
     indices = generate_indicies(sign_points)
@@ -354,7 +354,7 @@ def create_ifc():
     # relate sign types to the library
     model.createIfcRelDeclares(GlobalId=ifcopenshell.guid.new(),RelatingContext=sign_library,RelatedDefinitions=sign_types) 
 
-    output_file = "..\\IfcTrafficSignLibrary.ifc"
+    output_file = "..\\IfcTrafficSignLibrary_TextureMapping.ifc"
     print(output_file)
     model.write(output_file)
 

@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Select-Object -First 30)",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\BriceR\\\\OneDrive - Washington State Department of Transportation\\\\BIM for Infrastructure\\\\Signs\\\\MUTCD\\\\Signs\" -ErrorAction SilentlyContinue | ForEach-Object { $_.Name + \" [\" + $\\(if\\($_.PSIsContainer\\){\"DIR\"}else{\"FILE\"}\\) + \"]\" } | Select-Object -First 30)",
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\BriceR\\\\OneDrive - Washington State Department of Transportation\\\\BIM for Infrastructure\\\\Signs\\\\MUTCD\\\\Graphics\\\\R01-01 Stop\" | ForEach-Object { $_.Name })",
+      "Bash(powershell *)",
+      "Bash(python -c \"import shapely; print\\(shapely.__version__\\); print\\([x for x in dir\\(shapely\\) if 'tri' in x.lower\\(\\)]\\)\")",
+      "Bash(python Build_SignTypeLibrary_PolygonalFaceSet.py)",
+      "Bash(python -c ' *)"
+    ]
+  }
+}

@@ -1,2 +1,5 @@
 *.pyc
 *.bak
+__pycache__/
+Script/build_log.txt
+ink_*.txt

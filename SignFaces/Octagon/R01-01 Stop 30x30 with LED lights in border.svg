@@ -1,54 +1,79 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg id="For_Sheets" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 2160 2160">
-  <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
-  <defs>
-    <style>
-      .st0 {
-        fill: #231f20;
-      }
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
 
-      .st1 {
-        fill: #fff;
-      }
-
-      .st2 {
-        fill: #bf311a;
-      }
-
-      .st3 {
-        fill: #ed1c24;
-        stroke: #231f20;
-      }
-    </style>
-  </defs>
-  <g>
-    <g>
-      <polygon class="st1" points="632.6 2160.1 0 1527.4 -.1 632.6 632.6 0 1527.4 -.1 2160.1 632.6 2160.1 1527.4 1527.4 2160.1 632.6 2160.1"/>
-      <path class="st0" d="M1527.4,0l632.6,632.6v894.7l-632.6,632.6h-894.7L0,1527.4v-894.7L632.6,0h894.7M1527.5-.2h-895C632.5-.2-.2,632.5-.2,632.5h0v894.9H-.2c0,.1,0,.2,0,.2l632.6,632.6h0c0,0,.1,0,.1,0h894.9c0,0,632.6-632.7,632.6-632.7h0v-894.9h0c0-.1,0-.2,0-.2L1527.5-.2h0Z"/>
-    </g>
-    <polygon class="st2" points="655 2106 54 1505 54 655 655 54 1505 54 2106 655 2106 1505 1505 2106 655 2106"/>
-    <polygon class="st2" points="655 2106 54 1505 54 655 655 54 1505 54 2106 655 2106 1505 1505 2106 655 2106"/>
-    <g>
-      <path class="st1" d="M869.8,1440h-103.9v-624h-131.8v-96h367.4v96h-131.8v624Z"/>
-      <path class="st1" d="M1053.4,1078.5c0-377,174.9-371,213.7-371s211.3-5.8,211.3,371.2-172.5,373.8-211.3,373.8-213.7,5.9-213.7-374ZM1265.9,808.5c-20.5,0-113.3-4.2-113.3,270.5s92.8,272.5,113.3,272.5,113.2,4.2,113.2-272.5-92.7-270.5-113.2-270.5Z"/>
-      <path class="st1" d="M1668.1,1124.2v315.8h-103.3v-720h214.3c113.5,0,189.1,81.2,189.1,202.1s-68.1,202-189.1,202h-111ZM1668.1,1025.6h105.8c60.5,0,93.3-37.8,93.3-103.5s-38.2-101.1-93.2-101.1h-105.9v204.6Z"/>
-      <path class="st1" d="M496.3,1242.9c0-153.4-268.8-152.4-268.8-347.5s81.2-188,185.1-188,180.2,78.2,182.7,186.9h-99.1c-2.5-50.5-38.1-83.3-83.7-83.3s-86.2,35.3-86.2,83.2,19.6,55.6,63.2,82.9c99.4,58.1,205.7,132.9,205.7,265.9s-88.8,209.7-200.4,209.7-202.9-107.3-202.9-225h101.6c0,61.3,30.3,123.9,101.3,123.9h0c55.8,0,101.4-50.7,101.4-108.8Z"/>
+<svg
+   version="1.1"
+   id="svg1"
+   width="2880.6667"
+   height="2880.6667"
+   viewBox="0 0 2880.6667 2880.6667"
+   sodipodi:docname="tmpxbusr2_w.pdf"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:page
+       x="0"
+       y="0"
+       inkscape:label="1"
+       id="page1"
+       width="2880.6667"
+       height="2880.6667"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <g
+     id="g1"
+     inkscape:groupmode="layer"
+     inkscape:label="1">
+    <g
+       id="group-R5">
+      <path
+         id="path2"
+         d="M 6328.99,1.20313 1.61719,6328.1 1.25,15276 l 6326.86,6327.4 8947.89,0.4 6327.4,-6326.9 0.4,-8947.9 L 15276.5,1.20313 H 6328.99"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(0.13333333,0,0,-0.13333333,0,2880.6667)" />
+      <path
+         id="path3"
+         d="M 15277,21605 H 6327.96 l -0.73,-0.7 L 0.730469,15277.8 0,15277 v -1 -8947 -1 L 0.730469,6327.2 6327.23,0.703125 6327.96,0 h 1.04 8947 1 l 0.8,0.703125 6326.5,6326.496875 0.7,0.8 v 1 8947 1 l -0.7,0.8 -6326.5,6326.5 -0.8,0.7 z m -1,-2.5 6326.5,-6326.5 V 6329 L 15276,2.5 H 6329 L 2.5,6329 v 8947 L 6329,21602.5 h 8947"
+         style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(0.13333333,0,0,-0.13333333,0,2880.6667)" />
+      <path
+         id="path4"
+         d="M 6552.67,542.5 542.5,6552.7 v 8499.6 l 6010.17,6010.2 h 8499.63 l 6010.2,-6010.2 V 6552.7 L 15052.3,542.5 H 6552.67"
+         style="fill:#bf2519;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(0.13333333,0,0,-0.13333333,0,2880.6667)" />
+      <path
+         id="path5"
+         d="M 8700.17,7202.5 H 7661.61 v 6239.7 H 6344.07 v 960.3 h 3673.63 v -960.3 H 8700.17 V 7202.5"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(0.13333333,0,0,-0.13333333,0,2880.6667)" />
+      <path
+         id="path6"
+         d="m 12661,13517.8 c -205.2,0 -1133,42.3 -1133,-2705.4 0,-2767.5 927.8,-2725.2 1133,-2725.2 205.2,0 1132.2,-42.3 1132.2,2725.2 0,2747.7 -927,2705.4 -1132.2,2705.4 z m -2124.8,-2700 c 0,3770.1 1748.6,3709.8 2136.5,3709.8 387.9,0 2113.2,57.6 2113.2,-3712.5 0,-3797.1 -1725.3,-3737.7 -2113.2,-3737.7 -387.9,0 -2136.5,-59.4 -2136.5,3740.4"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(0.13333333,0,0,-0.13333333,0,2880.6667)" />
+      <path
+         id="path7"
+         d="m 16683.2,11346.1 h 1058.4 c 604.7,0 933.2,378 933.2,1035 0,606.6 -381.6,1010.7 -932.3,1010.7 h -1059.3 z m 0,-985.5 V 7202.5 h -1033.1 v 7200 h 2142.8 c 1134.8,0 1890.8,-811.8 1890.8,-2021.4 0,-1314 -681.3,-2020.5 -1890.8,-2020.5 h -1109.7"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(0.13333333,0,0,-0.13333333,0,2880.6667)" />
+      <path
+         id="path8"
+         d="m 4965.08,9173.5 c -0.9,1533.6 -2688.29,1523.7 -2688.29,3474.9 0,1035.9 811.8,1880.1 1851.29,1880.1 1039.5,0 1801.79,-782.1 1826.99,-1869.3 h -990.89 c -25.21,504.9 -380.7,833.4 -837,833.4 -482.39,0 -862.19,-352.8 -862.19,-832.5 0,-405.9 196.2,-556.2 631.79,-828.9 993.6,-581.4 2057.39,-1329.3 2057.39,-2659.5 0,-1165.5 -888.3,-2097 -2004.29,-2097 -1268.08,0 -2028.58,1072.8 -2028.58,2250 h 1016.09 c 0,-612.9 303.3,-1239.3 1013.39,-1239.3 v 0.9 c 558,0 1014.3,505.8 1014.3,1087.2"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(0.13333333,0,0,-0.13333333,0,2880.6667)" />
     </g>
   </g>
-  <circle class="st3" cx="1080" cy="27" r="22.5"/>
-  <circle class="st3" cx="335.4" cy="335.4" r="22.5"/>
-  <circle class="st3" cx="27" cy="1080" r="22.5"/>
-  <circle class="st3" cx="335.4" cy="1824.6" r="22.5"/>
-  <circle class="st3" cx="1080" cy="2133" r="22.5"/>
-  <circle class="st3" cx="1824.6" cy="1824.6" r="22.5"/>
-  <circle class="st3" cx="2133" cy="1080" r="22.5"/>
-  <circle class="st3" cx="1824.6" cy="335.4" r="22.5"/>
-  <circle class="st3" cx="1516.2" cy="2133" r="22.5"/>
-  <circle class="st3" cx="643.8" cy="2133" r="22.5"/>
-  <circle class="st3" cx="27" cy="1516.2" r="22.5"/>
-  <circle class="st3" cx="27" cy="643.8" r="22.5"/>
-  <circle class="st3" cx="1516.2" cy="27" r="22.5"/>
-  <circle class="st3" cx="643.8" cy="27" r="22.5"/>
-  <circle class="st3" cx="2133" cy="643.8" r="22.5"/>
-  <circle class="st3" cx="2133" cy="1516.2" r="22.5"/>
 </svg>

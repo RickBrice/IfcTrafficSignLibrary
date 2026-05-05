@@ -1,20 +1,59 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg id="For_Sheets" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 2160 2592">
-  <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
-  <defs>
-    <style>
-      .st0 {
-        fill: #231f20;
-      }
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
 
-      .st1 {
-        fill: #ffd046;
-      }
-    </style>
-  </defs>
-  <g>
-    <path class="st1" d="M135,2592.1c-35.9,0-69.8-14.1-95.4-39.7-25.6-25.6-39.7-59.5-39.7-95.4V135C-.1,99.1,14,65.2,39.6,39.6S99.1-.1,135-.1h1890c35.9,0,69.8,14.1,95.4,39.7,25.6,25.6,39.7,59.5,39.7,95.4v2322c0,35.9-14.1,69.8-39.7,95.4-25.6,25.6-59.5,39.7-95.4,39.7H135Z"/>
-    <path class="st0" d="M2025,0c74.2,0,135,60.8,135,135v2322c0,74.2-60.8,135-135,135H135c-74.2,0-135-60.8-135-135V135C0,60.8,60.8,0,135,0h1890M2025-.2H135C99-.2,65.1,13.9,39.5,39.5,13.9,65.1-.2,99-.2,135v2322c0,36,14.1,69.9,39.7,95.5,25.6,25.6,59.5,39.7,95.5,39.7h1890c36,0,69.9-14.1,95.5-39.7,25.6-25.6,39.7-59.5,39.7-95.5V135c0-36-14.1-69.9-39.7-95.5-25.6-25.6-59.5-39.7-95.5-39.7h0Z"/>
+<svg
+   version="1.1"
+   id="svg1"
+   width="2880.6667"
+   height="3456.6667"
+   viewBox="0 0 2880.6667 3456.6667"
+   sodipodi:docname="tmpmdgazqfv.pdf"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:page
+       x="0"
+       y="0"
+       inkscape:label="1"
+       id="page1"
+       width="2880.6667"
+       height="3456.6667"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <g
+     id="g1"
+     inkscape:groupmode="layer"
+     inkscape:label="1">
+    <g
+       id="group-R5">
+      <path
+         id="path2"
+         d="M 1352.5,1.20313 C 993.063,1.20313 654.141,142.199 398.18,398.203 142.219,654.102 1.25,993.102 1.25,1352.5 v 23220 c 0,359.4 140.969,698.4 396.93,954.3 255.961,256 594.883,397 954.32,397 h 18900 c 359.4,0 698.4,-141 954.3,-397 256,-255.9 397,-594.9 397,-954.3 v -23220 c 0,-359.398 -141,-698.398 -397,-954.297 C 20950.9,142.199 20611.9,1.20313 20252.5,1.20313 h -18900"
+         style="fill:#fccc2d;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(0.13333333,0,0,-0.13333333,0,3456.6667)" />
+      <path
+         id="path3"
+         d="m 20252.5,25925 h -18900 c -359.773,0 -699.008,-141.1 -955.207,-397.3 C 141.098,25271.5 0,24932.3 0,24572.5 V 1352.5 C 0,992.699 141.098,653.5 397.293,397.301 653.492,141.102 992.727,0 1352.5,0 h 18900 c 359.8,0 699,141.102 955.2,397.301 256.2,256.199 397.3,595.398 397.3,955.199 v 23220 c 0,359.8 -141.1,699 -397.3,955.2 -256.2,256.2 -595.4,397.3 -955.2,397.3 z m 0,-2.5 c 742.5,0 1350,-607.5 1350,-1350 V 1352.5 C 21602.5,610 20995,2.5 20252.5,2.5 H 1352.5 C 610,2.5 2.5,610 2.5,1352.5 v 23220 c 0,742.5 607.5,1350 1350,1350 h 18900"
+         style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(0.13333333,0,0,-0.13333333,0,3456.6667)" />
+      <path
+         id="path4"
+         d="m 20882.5,25202.5 -10080,-12240 10080,-12240 h -10080 L 722.512,12962.5 10802.5,25202.5 h 10080"
+         style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(0.13333333,0,0,-0.13333333,0,3456.6667)" />
+    </g>
   </g>
-  <polygon class="st0" points="2088 72 1080 1296 2088 2520 1080 2520 72 1296 1080 72 2088 72"/>
 </svg>

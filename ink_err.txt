@@ -1,0 +1,3 @@
+InkscapeApplication::parse_actions: could not find action for: transform-apply
+
+** (org.inkscape.Inkscape:704): WARNING **: 09:01:28.888: No pages selected, getting first page only.

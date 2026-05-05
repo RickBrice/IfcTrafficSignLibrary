@@ -1,27 +1,84 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg id="For_Sheets" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1728 648">
-  <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
-  <defs>
-    <style>
-      .st0 {
-        fill: #231f20;
-      }
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
 
-      .st1 {
-        fill: #fff;
-      }
-    </style>
-  </defs>
-  <g>
-    <rect class="st1" x="-.1" y="-.1" width="1728.2" height="648.2" rx="108.1" ry="108.1"/>
-    <path class="st0" d="M1620,0c59.6,0,108,48.4,108,108v432c0,59.6-48.4,108-108,108H108c-59.6,0-108-48.4-108-108V108C0,48.4,48.4,0,108,0h1512M1620-.2H108C79.1-.2,51.9,11,31.5,31.5,11,51.9-.2,79.1-.2,108v432c0,28.9,11.3,56.1,31.7,76.5,20.4,20.4,47.6,31.7,76.5,31.7h1512c28.9,0,56.1-11.3,76.5-31.7,20.4-20.4,31.7-47.6,31.7-76.5V108c0-28.9-11.3-56.1-31.7-76.5-20.4-20.4-47.6-31.7-76.5-31.7h0Z"/>
-  </g>
-  <path class="st0" d="M1620,27H108c-44.7,0-81,36.3-81,81v432c0,44.7,36.3,81,81,81h1512c44.7,0,81-36.3,81-81V108c0-44.7-36.3-81-81-81ZM1656,540c0,19.9-16.1,36-36,36H108c-19.9,0-36-16.1-36-36V108c0-19.9,16.1-36,36-36h1512c19.9,0,36,16.1,36,36v432Z"/>
-  <g>
-    <path class="st0" d="M412.1,387.1h-90.4l-28.5,80.9h-48.8l99.6-288h45.8l99.6,288h-48.8l-28.5-80.9ZM337.9,340.7h57.9l-28.5-80.8-29.4,80.8Z"/>
-    <path class="st0" d="M683.1,342.7h-105.2v125.3h-45.4V180h45.4v116.2h105.1v-116.2h45.5v288h-45.5v-125.3Z"/>
-    <path class="st0" d="M797.7,180h169.6v45.5h-124.1v70.7h83.8v46.5h-83.8v78.8h133.2v46.5h-178.6V180Z"/>
-    <path class="st0" d="M1167.1,387.1h-90.4l-28.5,80.9h-48.8l99.6-288h45.8l99.6,288h-48.8l-28.5-80.9ZM1092.9,340.7h57.9l-28.5-80.8-29.4,80.8Z"/>
-    <path class="st0" d="M1287.5,468V180h103.9c72.7,0,92.2,95.7,92.2,137.5,0,108-55.5,150.5-92,150.5h-104.1ZM1384.5,225.5h-51.5v196h48.3c41.9,0,55.7-50.8,55.7-105s-7.3-91-52.4-91Z"/>
+<svg
+   version="1.1"
+   id="svg1"
+   width="2304.6667"
+   height="864.66669"
+   viewBox="0 0 2304.6667 864.66669"
+   sodipodi:docname="tmp7vtyzxrx.pdf"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:page
+       x="0"
+       y="0"
+       inkscape:label="1"
+       id="page1"
+       width="2304.6667"
+       height="864.66669"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <g
+     id="g1"
+     inkscape:groupmode="layer"
+     inkscape:label="1">
+    <g
+       id="group-R5">
+      <path
+         id="path2"
+         d="M 1082.5,1.25 C 486.293,1.25 1.25,486.301 1.25,1082.5 v 4320 c 0,596.21 485.043,1081.25 1081.25,1081.25 h 15120 c 596.2,0 1081.3,-485.04 1081.3,-1081.25 v -4320 C 17283.8,486.301 16798.7,1.25 16202.5,1.25 h -15120"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(0.13333333,0,0,-0.13333333,0,864.66667)" />
+      <path
+         id="path3"
+         d="M 16202.5,6485 H 1082.5 C 793.355,6485 521.516,6372.4 317.059,6167.95 112.602,5963.49 0,5691.64 0,5402.5 v -4320 C 0,793.352 112.602,521.52 317.059,317.059 521.516,112.602 793.355,0 1082.5,0 h 15120 c 289.1,0 561,112.602 765.4,317.059 204.5,204.461 317.1,476.293 317.1,765.441 v 4320 c 0,289.15 -112.6,560.99 -317.1,765.45 -204.4,204.45 -476.3,317.05 -765.4,317.05 z m 0,-2.5 c 596.5,0 1080,-483.53 1080,-1080 v -4320 c 0,-596.469 -483.5,-1080 -1080,-1080 H 1082.5 C 486.035,2.5 2.5,486.031 2.5,1082.5 v 4320 c 0,596.47 483.535,1080 1080,1080 h 15120"
+         style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(0.13333333,0,0,-0.13333333,0,864.66667)" />
+      <path
+         id="path4"
+         d="m 16562.5,1082.5 c 0,-198.512 -161.5,-360 -360,-360 h -15120 c -198.508,0 -360,161.488 -360,360 v 4320 c 0,198.51 161.492,360 360,360 h 15120 c 198.5,0 360,-161.49 360,-360 z m -360,5130 h -15120 c -446.637,0 -810,-363.36 -810,-810 v -4320 c 0,-446.629 363.363,-810 810,-810 h 15120 c 446.6,0 810,363.371 810,810 v 4320 c 0,446.64 -363.4,810 -810,810"
+         style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(0.13333333,0,0,-0.13333333,0,864.66667)" />
+      <path
+         id="path5"
+         d="m 3381.78,3075.81 h 579.21 l -284.74,808.2 z m 741.56,-464.76 h -904.27 l -284.75,-808.56 h -487.78 l 996.08,2880 h 457.54 l 995.71,-2880 h -487.78 l -284.75,808.56"
+         style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(0.13333333,0,0,-0.13333333,0,864.66667)" />
+      <path
+         id="path6"
+         d="M 6833.81,3055.65 H 5782.3 V 1802.49 H 5328 v 2880 h 454.3 V 3520.41 h 1051.15 v 1162.08 h 455.02 v -2880 h -454.66 v 1253.16"
+         style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(0.13333333,0,0,-0.13333333,0,864.66667)" />
+      <path
+         id="path7"
+         d="M 7979.77,4682.49 H 9675.29 V 4227.81 H 8434.07 v -707.4 h 837.68 v -464.76 h -837.68 v -788.4 H 9766.01 V 1802.49 H 7979.77 v 2880"
+         style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(0.13333333,0,0,-0.13333333,0,864.66667)" />
+      <path
+         id="path8"
+         d="m 10931.8,3075.81 h 579.2 l -284.8,808.2 z m 741.5,-464.76 h -904.2 l -284.8,-808.56 h -487.77 l 996.07,2880 h 457.5 l 995.8,-2880 h -487.8 l -284.8,808.56"
+         style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(0.13333333,0,0,-0.13333333,0,864.66667)" />
+      <path
+         id="path9"
+         d="m 13847.8,4227.81 h -515.5 v -1960.2 h 483.4 c 419.1,0 556.6,507.6 556.6,1049.76 0,257.76 -73.5,910.44 -524.5,910.44 z M 12878,1802.49 v 2880 h 1038.9 c 726.8,0 921.6,-957.24 921.6,-1375.2 0,-1080.36 -555.5,-1504.8 -919.8,-1504.8 H 12878"
+         style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         transform="matrix(0.13333333,0,0,-0.13333333,0,864.66667)" />
+    </g>
   </g>
 </svg>

@@ -7,7 +7,23 @@
       "Bash(powershell *)",
       "Bash(python -c \"import shapely; print\\(shapely.__version__\\); print\\([x for x in dir\\(shapely\\) if 'tri' in x.lower\\(\\)]\\)\")",
       "Bash(python Build_SignTypeLibrary_PolygonalFaceSet.py)",
-      "Bash(python -c ' *)"
+      "Bash(python -c ' *)",
+      "PowerShell(Tee-Object *)",
+      "PowerShell(Get-Item \"F:\\\\IfcTrafficSignLibrary\\\\IfcTrafficSignLibrary_PolygonalFaceSet.ifc\" | Select-Object Name, Length, LastWriteTime; \\(Select-String -Path \"F:\\\\IfcTrafficSignLibrary\\\\Script\\\\build_log.txt\" -Pattern \"^Processing\"\\).Count)",
+      "PowerShell(Get-Item *)",
+      "PowerShell(\\(Get-Content \"F:\\\\IfcTrafficSignLibrary\\\\Script\\\\build_log.txt\" | Where-Object { $_ -match \"^Processing\" }\\).Count)",
+      "PowerShell($eps = Get-ChildItem -Path \"C:\\\\Users\\\\BriceR\\\\OneDrive - Washington State Department of Transportation\\\\BIM for Infrastructure\\\\Signs\\\\MUTCD\\\\Signs\", \"C:\\\\Users\\\\BriceR\\\\OneDrive - Washington State Department of Transportation\\\\BIM for Infrastructure\\\\Signs\\\\MUTCD\\\\Graphics\" -Recurse -Filter \"D04-02 PARK-RIDE 24x30.eps\" -ErrorAction SilentlyContinue | Select-Object -First 1 -ExpandProperty FullName; & \"C:\\\\Program Files\\\\Inkscape\\\\bin\\\\inkscape.exe\" $eps --export-type=svg --export-plain-svg \"--export-filename=F:\\\\IfcTrafficSignLibrary\\\\test_d0402.svg\"; Write-Host \"Exit: $LASTEXITCODE\")",
+      "PowerShell(Get-Item \"F:\\\\IfcTrafficSignLibrary\\\\test_d0402.svg\" | Select-Object Length; Select-String -Path \"F:\\\\IfcTrafficSignLibrary\\\\test_d0402.svg\" -Pattern 'fill=\"#\\([0-9a-fA-F]{3,6}\\)\"' -AllMatches | ForEach-Object { $_.Matches } | ForEach-Object { $_.Groups[1].Value.ToLower\\(\\) } | Sort-Object | Get-Unique)",
+      "PowerShell(Get-ChildItem *)",
+      "PowerShell(Test-Path *)",
+      "PowerShell(& \"C:\\\\Program Files\\\\Inkscape\\\\bin\\\\inkscape.exe\" --version 2>&1)",
+      "PowerShell(Get-Command *)",
+      "PowerShell(Get-Content *)",
+      "PowerShell(& \"C:\\\\Program Files\\\\Inkscape\\\\bin\\\\inkscape.exe\" --version)",
+      "PowerShell(Select-String *)",
+      "PowerShell(Select-String -Path \"F:\\\\IfcTrafficSignLibrary\\\\test_inkscape_out.svg\" -Pattern \"fill:#[0-9a-fA-F]{6}\" -AllMatches | ForEach-Object { $_.Matches } | ForEach-Object { $_.Value } | Sort-Object -Unique)",
+      "PowerShell(Select-String -Path \"F:\\\\IfcTrafficSignLibrary\\\\SignFaces\\\\Rectangle\\\\I01-01 SIGNALS SET FOR \\(Changeable Speed\\) 24x36.svg\" -Pattern \"fill:[^;}'\"\"]+url|fill:[a-zA-Z]{3,}\" -AllMatches | ForEach-Object { $_.Matches } | ForEach-Object { $_.Value } | Sort-Object -Unique | Select-Object -First 20)",
+      "PowerShell(Rename-Item *)"
     ]
   }
 }
